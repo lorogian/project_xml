@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 public class App 
 {
@@ -25,9 +26,10 @@ public class App
         cars.add(a3);
         cars.add(a4);
 
-    
-            XmlMapper xmlMapper = new XmlMapper();
-            xmlMapper.writeValue(new File("Classe.xml"), s);
+    // parte json 
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.writeValue(new File("target/car.json"), s);
+        
            
         
         
